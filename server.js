@@ -1,9 +1,9 @@
 const express = require("express");
+const companies = require("./database/companies");
 const server = express();
 
-server.get("/", (res, req) => {
-  const packageJson = require("./package.json");
-  res.json(packageJson);
+server.get("/api", (req, res) => {
+  res.json(companies);
 });
 
 server.listen(3000, () => {
