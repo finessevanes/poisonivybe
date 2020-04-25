@@ -1,0 +1,27 @@
+{
+  "roommates": 4,
+  "city": "Phoenix",
+  "state": "Arizona",
+  "peoples": [
+    {
+      "name": "Vanessa",
+      "age": 28,
+      "gender": "female"
+    },
+    {
+      "name": "Kerry",
+      "age": 38,
+      "gender": "male"
+    },
+    {
+      "name": "Claudia",
+      "age": 26,
+      "gender": "female"
+    },
+    {
+      "name": "Raul",
+      "age": 26,
+      "gender": "male"
+    }
+  ]
+}

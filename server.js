@@ -1,11 +1,31 @@
 const express = require("express");
-const companies = require("./database/companies");
 const server = express();
+const fs = require("fs");
+const fileName = "./database/roomies.json";
 
-server.get("/api", (req, res) => {
-  res.json(companies);
-});
+const readFileAsync = () => {
+  fs.readFile(fileName, (error, data) => {
+    console.log("Async Starting");
+    if (error) {
+      console.log("Async error", error);
+    } else {
+      try {
+        const dataJson = JSON.parse(data);
+        console.log("AsyncREAD");
+        server.get("/", (req, res) => {
+          res.json(dataJson);
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  });
+};
 
-server.listen(3000, () => {
-  console.log("server is on");
+readFileAsync();
+
+// set port, listen for requests
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
 });
