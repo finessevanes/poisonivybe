@@ -1,7 +1,7 @@
 const express = require("express");
 const server = express();
 const fs = require("fs");
-const fileName = "./database/roomies.json";
+const fileName = "./database/dataTonicData.json";
 
 const readFileAsync = () => {
   fs.readFile(fileName, (error, data) => {
